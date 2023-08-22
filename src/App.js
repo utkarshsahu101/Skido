@@ -19,14 +19,15 @@ const App = () => {
   return (
     <Layout>
       <HeaderComponent />
-      <LoginComponent />
-      {/* <Content
-        className="site-layout"
+      <Content
+        // className="site-layout"
         style={{
           padding: "0 50px",
+          minHeight: "calc(100vh - 64px)",
         }}
       >
-        <div
+        <LoginComponent />
+        {/* <div
           style={{
             padding: 24,
             minHeight: 380,
@@ -34,8 +35,8 @@ const App = () => {
           }}
         >
           Content
-        </div>
-      </Content> */}
+        </div> */}
+      </Content>
     </Layout>
   );
 };
