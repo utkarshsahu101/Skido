@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import {
+  UploadOutlined,
+  UserOutlined,
+  VideoCameraOutlined,
+} from "@ant-design/icons";
+import { Layout, Menu, theme, Col, Row, Button, Typography } from "antd";
+import HeaderComponent from "./components/Header/HeaderComponent";
+import LoginComponent from "./components/Login/LoginComponent";
+const { Header, Content, Footer, Sider } = Layout;
 
-function App() {
+const { Title } = Typography;
+
+const App = () => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Layout>
+      <HeaderComponent />
+      <LoginComponent />
+      {/* <Content
+        className="site-layout"
+        style={{
+          padding: "0 50px",
+        }}
+      >
+        <div
+          style={{
+            padding: 24,
+            minHeight: 380,
+            background: colorBgContainer,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Content
+        </div>
+      </Content> */}
+    </Layout>
   );
-}
-
+};
 export default App;
