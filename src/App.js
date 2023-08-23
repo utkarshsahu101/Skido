@@ -8,6 +8,7 @@ import {
 import { Layout, Menu, theme, Col, Row, Button, Typography } from "antd";
 import HeaderComponent from "./components/Header/HeaderComponent";
 import LoginComponent from "./components/Login/LoginComponent";
+import AnnouncementsComponent from "./components/Announcements/AnnouncementsComponent";
 const { Header, Content, Footer, Sider } = Layout;
 
 const { Title } = Typography;
@@ -26,7 +27,8 @@ const App = () => {
           minHeight: "calc(100vh - 64px)",
         }}
       >
-        <LoginComponent />
+        {/* <LoginComponent /> */}
+        <AnnouncementsComponent />
         {/* <div
           style={{
             padding: 24,
