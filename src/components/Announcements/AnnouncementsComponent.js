@@ -107,7 +107,18 @@ const AnnouncementsComponent = () => {
                     fontWeight: "500",
                   }}
                 >
-                  <span style={{ width: "2px" }}>|</span> ALL POSTS
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <div
+                      style={{
+                        width: "22px",
+                        borderRadius: "5px",
+                        transform: "rotate(90deg)",
+                        height: "7px",
+                        background: "#80808094",
+                      }}
+                    ></div>
+                    <>ALL POSTS</>
+                  </div>
                 </div>
               </Col>
               <Col span={24}>
@@ -115,25 +126,45 @@ const AnnouncementsComponent = () => {
                   style={{
                     width: "100%",
                     padding: "0px 10px",
-                    borderRadius: "5px",
                     fontWeight: "500",
                   }}
                 >
-                  <span style={{ width: "2px" }}>|</span>PROMOTIONS
-                  <StarOutlined />
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <div
+                      style={{
+                        width: "22px",
+                        borderRadius: "5px",
+                        transform: "rotate(90deg)",
+                        height: "7px",
+                        background: "rgba(128, 128, 128, 34%)",
+                      }}
+                    ></div>
+                    <>PROMOTIONS</>
+                    <StarOutlined style={{ marginLeft: "5px" }} />
+                  </div>
                 </div>
               </Col>
               <Col span={24}>
                 <div
                   style={{
                     width: "100%",
-                    padding: "0px 10px",
-                    borderRadius: "5px",
+                    padding: "5px 10px",
                     fontWeight: "500",
                   }}
                 >
-                  <span style={{ width: "2px" }}>|</span>ANNOUNCEMENTS
-                  <BellOutlined />
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <div
+                      style={{
+                        width: "22px",
+                        borderRadius: "5px",
+                        transform: "rotate(90deg)",
+                        height: "7px",
+                        background: "#ff000040",
+                      }}
+                    ></div>
+                    <>ANNOUNCEMENTS</>
+                    <BellOutlined style={{ marginLeft: "5px" }} />
+                  </div>
                 </div>
               </Col>
             </Row>
