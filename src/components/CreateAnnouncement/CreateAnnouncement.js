@@ -12,8 +12,8 @@ const CreateAnnouncement = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const noteCreate = useSelector((state) => state.announcementsCreate);
-  const { loading, error } = noteCreate;
+  const announcementCreate = useSelector((state) => state.announcementsCreate);
+  const { loading, error, announcements } = announcementCreate;
 
   /* eslint-disable no-template-curly-in-string */
   const validateMessages = {
