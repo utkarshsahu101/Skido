@@ -12,12 +12,7 @@ const App = () => {
   return (
     <Layout>
       <HeaderComponent />
-      <Content
-        style={{
-          padding: "0 50px",
-          minHeight: "calc(100vh - 64px)",
-        }}
-      >
+      <Content className="content">
         <Routes>
           <Route path="/" element={<AnnouncementsComponent />} />
           <Route path="/login" element={<LoginComponent />} />
