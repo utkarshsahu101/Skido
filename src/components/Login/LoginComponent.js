@@ -1,9 +1,22 @@
-import React, { useState } from "react";
-import { Button, Form, Input, Row, Col, Space } from "antd";
+import React, { useEffect, useState } from "react";
+import { Button, Form, Input, Row, Col, Alert } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../redux/actions/userActions";
+import { useNavigate } from "react-router-dom";
 
 const LoginComponent = () => {
   const [form] = Form.useForm();
   const [formLayout, setFormLayout] = useState("vertical");
+
+  let navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+
+  const userLogin = useSelector((state) => state.userLogin);
+
+  const { loading, userInfo, error } = userLogin;
 
   const onFormLayoutChange = ({ layout }) => {
     setFormLayout(layout);
@@ -31,6 +44,23 @@ const LoginComponent = () => {
         }
       : null;
 
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [userInfo]);
+
+  const resetHandler = () => {
+    setEmail("");
+    setPassword("");
+  };
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    dispatch(login(email, password));
+    resetHandler();
+  };
+
   return (
     <Row
       justify={"center"}
@@ -56,19 +86,36 @@ const LoginComponent = () => {
               }}
             >
               <Form.Item label="Email">
-                <Input placeholder="Enter your email address" />
+                <Input
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                />
               </Form.Item>
               <Form.Item label="Password">
-                <Input placeholder="Enter your password" />
+                <Input
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  type="password"
+                />
               </Form.Item>
               <Form.Item {...buttonItemLayout}>
                 <Row gutter={[8]} justify={"end"}>
                   <Col span={"3.8"}>
-                    <Button type="primary">Log in</Button>
+                    <Button
+                      type="primary"
+                      onClick={submitHandler}
+                      loading={loading}
+                    >
+                      Log in
+                    </Button>
                   </Col>
                 </Row>
               </Form.Item>
             </Form>
+            {error && <Alert message={error} type="error" />}
           </Col>
         </Row>
       </Col>
