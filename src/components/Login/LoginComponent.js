@@ -67,7 +67,7 @@ const LoginComponent = () => {
       align={"middle"}
       style={{ height: "calc(100vh - 64px)" }}
     >
-      <Col span={"8"}>
+      <Col xl={8} md={12}>
         <Row gutter={[8]}>
           <Col span={"24"}>
             <h1>Log in</h1>

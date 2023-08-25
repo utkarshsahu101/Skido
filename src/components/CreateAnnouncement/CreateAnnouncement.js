@@ -39,7 +39,7 @@ const CreateAnnouncement = () => {
 
   return (
     <Row justify={"center"} align={"middle"}>
-      <Col span={8}>
+      <Col xl={8} md={12}>
         <Col span={24}>
           <h1>Create Announcement</h1>
         </Col>
@@ -48,9 +48,7 @@ const CreateAnnouncement = () => {
             layout="vertical"
             name="nest-messages"
             onFinish={onFinish}
-            style={{
-              maxWidth: 600,
-            }}
+            style={{ width: "100%" }}
             validateMessages={validateMessages}
           >
             <Form.Item

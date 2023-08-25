@@ -38,7 +38,16 @@ const AnnouncementsComponent = () => {
     <Row style={{ padding: "30px 0px" }}>
       <Col span={24}>
         <Row gutter={0.5} justify={"space-between"}>
-          <Col span={18}>
+          <Col
+            xl={18}
+            lg={16}
+            sm={24}
+            xs={{ order: 2 }}
+            md={{
+              order: 1,
+              span: 15,
+            }}
+          >
             {loading ? (
               <Row gutter={[0, 16]}>
                 {new Array(2).fill().map((e, index) => (
@@ -110,16 +119,18 @@ const AnnouncementsComponent = () => {
                           <Title level={4} style={{ margin: "5px 0px" }}>
                             {announcement.title}
                           </Title>{" "}
-                          <div
+                          <Col
                             style={{
                               background: "#d9363e21",
                               padding: "5px",
                               borderRadius: "5px",
-                              maxWidth: "20%",
                               display: "flex",
                               alignItems: "center",
                               marginBottom: "20px",
                             }}
+                            xl={5}
+                            lg={8}
+                            md={12}
                           >
                             <BellOutlined />
                             <Text
@@ -132,7 +143,7 @@ const AnnouncementsComponent = () => {
                             >
                               ANNOUNCEMENTS
                             </Text>
-                          </div>
+                          </Col>
                           <div style={{ margin: "10px 0px" }}>
                             {announcement.body}
                           </div>
@@ -141,7 +152,9 @@ const AnnouncementsComponent = () => {
                           </div>
                           <Row gutter={2} align={"middle"}>
                             <Col
-                              span={1}
+                              xl={1}
+                              md={2}
+                              xs={3}
                               style={{
                                 display: "flex",
                                 justifyContent: "center",
@@ -149,7 +162,7 @@ const AnnouncementsComponent = () => {
                             >
                               <SmileOutlined />
                             </Col>
-                            <Col span={23}>
+                            <Col xl={23} md={21} xs={19}>
                               <Input
                                 placeholder="Give us some feedback"
                                 style={{ borderRadius: "5px" }}
@@ -198,7 +211,16 @@ const AnnouncementsComponent = () => {
               </Row>
             )}
           </Col>
-          <Col span={5}>
+          <Col
+            xl={5}
+            lg={7}
+            sm={24}
+            xs={{ order: 1 }}
+            md={{
+              order: 2,
+              span: 8,
+            }}
+          >
             <Row gutter={[0, 16]}>
               <Col span={24}>
                 <Button
@@ -264,9 +286,15 @@ const AnnouncementsComponent = () => {
                     width: "100%",
                     padding: "5px 10px",
                     fontWeight: "500",
+                    marginBottom: "10px",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
                     <div
                       style={{
                         width: "22px",

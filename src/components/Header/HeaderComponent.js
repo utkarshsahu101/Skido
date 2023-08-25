@@ -66,7 +66,7 @@ const HeaderComponent = () => {
               navigate("/");
             }}
           >
-            View Announcements
+            Announcements
           </Button>
         ) : (
           <Button
