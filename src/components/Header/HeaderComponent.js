@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../../assets/logo.png";
 import { Layout, Button } from "antd";
+import "./Header.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../redux/actions/userActions";
@@ -21,39 +22,10 @@ const HeaderComponent = () => {
   };
 
   return (
-    <Header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 1,
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        paddingInline: "20px",
-        boxShadow: "0px 2px #0000001a",
-        background: "#fff",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          height: "100%",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            height: "100%",
-            alignItems: "center",
-            width: "30%",
-            justifyContent: "space-between",
-          }}
-        >
+    <Header className="headerWrapper">
+      <div className="headerWrapperContainer">
+        <div className="imageWrapper">
           <img src={Logo} alt="logo" height="100%" />
-          <h2 style={{ color: "#fff", fontWeight: "normal" }}>Announcements</h2>
         </div>
         {userInfo?.userInfo ? (
           <Button type="primary" onClick={logoutHandler}>
