@@ -1,0 +1,10 @@
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.commentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 8px;
+}
