@@ -26,12 +26,14 @@ const AnnouncementsComponent = () => {
   const { userInfo } = userData;
 
   useEffect(() => {
+    // dispatch announcements once - componentdidmount
     dispatch(listAnnouncements());
   }, []);
 
   const submitAnnouncementHandler = (e) => {
     e.preventDefault();
     if (userInfo) {
+      // if user present redirect to create page else to login
       navigate("/create");
     } else navigate("/login");
   };
@@ -50,6 +52,7 @@ const AnnouncementsComponent = () => {
               span: 15,
             }}
           >
+            {/* shimmer/ skeleton on fetching announcements */}
             {loading ? (
               <Shimmer />
             ) : (

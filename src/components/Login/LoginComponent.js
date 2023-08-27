@@ -45,6 +45,7 @@ const LoginComponent = () => {
       : null;
 
   useEffect(() => {
+    // if user found then navigate to list page
     if (userInfo) {
       navigate("/");
     }
@@ -57,6 +58,7 @@ const LoginComponent = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    // dispatch login action
     dispatch(login(email, password));
     resetHandler();
   };

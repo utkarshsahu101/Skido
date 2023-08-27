@@ -32,6 +32,7 @@ const CreateAnnouncement = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    // dispatch create action
     dispatch(createAnnouncement(title, description, category));
     resetHandler();
     navigate("/");
