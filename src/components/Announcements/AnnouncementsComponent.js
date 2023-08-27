@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Col, Row, Card, Button, Typography, Input, Skeleton } from "antd";
+import { Col, Row, Card, Button, Typography, Input } from "antd";
 import {
   BellOutlined,
   SmileOutlined,
